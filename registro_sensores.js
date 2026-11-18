@@ -1,3 +1,6 @@
+// registro_sensores.js
+
+require('dotenv').config(); 
 const http = require('node:http');
 const {join} = require('node:path');
 const {readFile} = require('node:fs');
@@ -77,7 +80,7 @@ const MAX_LUMINOSIDAD = 700; // Lux
 const MAX_PPM_GAS = 300; // Partículas por millón (ppm)
 
 // ------- Configuración del bot de Telegram -------
-const TELEGRAM_TOKEN = '8702302349:AAHUwKTa4EM73Qedbv9qeDpPYKl3dvwu2sc';
+const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const telegramBot = new TelegramBot(TELEGRAM_TOKEN, {polling: true});
 
 // Para comprobar si hay errores en la conexión con Telegram
